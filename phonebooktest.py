@@ -29,4 +29,13 @@ class TestPhonebook(unittest.TestCase):
         self.new_contact.save_contact()
         test_contact=Contact("olivia","neema","0712002200")
         test_contact.save_contact()
-        self.assertEqual(len(Contact.contact_list),2)        
+        self.assertEqual(len(Contact.contact_list),2)
+
+
+    def test_delete_removes_contact(self):
+        self.new_contact.save_contact()
+        test_contact=Contact("olivia","neema","0712002200")
+        test_contact.save_contact()
+
+        self.new_contact.delete_contact()
+        self.assertEqual(len(Contact.contact_list),1)
