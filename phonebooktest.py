@@ -57,5 +57,9 @@ class TestPhonebook(unittest.TestCase):
 
         contact_there=Contact.contact_exists("0712002200")
         self.assertTrue(contact_there)
+
+
+    def test_display_all_contacts(self):
+        self.assertEqual(Contact.contact_list, Contact.display_contacts())    
             
 
