@@ -23,4 +23,10 @@ class TestPhonebook(unittest.TestCase):
 
     def test_save_adds_to_list(self):
         self.new_contact.save_contact()
-        self.assertEqual(len(Contact.contact_list),1)    
+        self.assertEqual(len(Contact.contact_list),1)
+
+    def test_save_multiple_contacts(self):
+        self.new_contact.save_contact()
+        test_contact=Contact("olivia","neema","0712002200")
+        test_contact.save_contact()
+        self.assertEqual(len(Contact.contact_list),2)        
