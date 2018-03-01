@@ -20,4 +20,11 @@ class Contact:
     def find_contact(cls,number):
         for contact in cls.contact_list:
             if contact.number==number:
-                return contact        
+                return contact
+
+    @classmethod
+    def contact_exists(cls,number):
+        for contact in cls.contact_list:
+            if contact.number == number:
+                return True
+        return False                    

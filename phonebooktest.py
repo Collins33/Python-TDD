@@ -50,3 +50,12 @@ class TestPhonebook(unittest.TestCase):
 
         self.assertEqual(found_contact.number,test_contact.number)
 
+    def test_contact_exists(self):
+        self.new_contact.save_contact()
+        test_contact=Contact("olivia","neema","0712002200")
+        test_contact.save_contact()
+
+        contact_there=Contact.contact_exists("0712002200")
+        self.assertTrue(contact_there)
+            
+
