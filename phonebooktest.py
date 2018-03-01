@@ -13,5 +13,9 @@ class TestPhonebook(unittest.TestCase):
 
 
     def test_initialize_phonebook(self):
-        
+        #tests if object initializes well       
         self.assertEqual(self.new_contact.first_name, "collins")
+
+    def test_save_adds_to_list(self):
+        self.new_contact.save_contact()
+        self.assertEqual(len(Contact.contact_list),1)    
