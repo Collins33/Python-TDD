@@ -32,3 +32,10 @@ class Contact:
     @classmethod
     def display_contacts(cls):
         return cls.contact_list                    
+    
+    @classmethod
+    def update_name(cls,oldname,newName):
+        for contact in cls.contact_list:
+            if contact.first_name == oldname:
+                contact.first_name.replace(contact.first_name,newName)
+                return contact

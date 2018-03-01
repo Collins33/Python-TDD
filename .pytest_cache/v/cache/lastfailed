@@ -1,1 +1,3 @@
-{}
+{
+  "phonebooktest.py::TestPhonebook::test_update_changes_name": true
+}
