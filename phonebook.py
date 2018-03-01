@@ -13,4 +13,11 @@ class Contact:
         Contact.contact_list.append(self)
 
     def delete_contact(self):
-        Contact.contact_list.remove(self)    
+        #removes the contact from the contact list
+        Contact.contact_list.remove(self)
+
+    @classmethod
+    def find_contact(cls,number):
+        for contact in cls.contact_list:
+            if contact.number==number:
+                return contact        
