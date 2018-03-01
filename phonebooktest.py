@@ -11,6 +11,11 @@ class TestPhonebook(unittest.TestCase):
         #it creates instance of Contact class
         self.new_contact=Contact("collins","njau","0702848032")
 
+    def tearDown(self):
+        #this test runs after every test
+        #it clears the contact_list
+        Contact.contact_list=[]    
+
 
     def test_initialize_phonebook(self):
         #tests if object initializes well       

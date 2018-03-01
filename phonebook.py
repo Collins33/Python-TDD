@@ -9,4 +9,5 @@ class Contact:
 
 
     def save_contact(self):
+        #saves the contact into the contact list
         Contact.contact_list.append(self)
