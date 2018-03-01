@@ -60,6 +60,12 @@ class TestPhonebook(unittest.TestCase):
 
 
     def test_display_all_contacts(self):
-        self.assertEqual(Contact.contact_list, Contact.display_contacts())    
+        self.assertEqual(Contact.contact_list, Contact.display_contacts())
+
+
+    def test_update_changes_name(self):
+        self.new_contact.save_contact()
+        updated_contact=Contact.update_name("collins","muru")
+        self.assertEqual(updated_contact.first_name,"muru")        
             
 
